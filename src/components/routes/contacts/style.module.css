@@ -1,0 +1,122 @@
+.btn_wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+.logout_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #dc3545;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.logout_btn:hover {
+  background-color: #bb2c3a;
+}
+
+.contacts_wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.search_input_wrapper {
+  width: 90vw;
+  max-width: 600px;
+}
+
+.search_input {
+  margin: 80px auto;
+  display: block;
+  width: 280px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.search_input::placeholder {
+  word-spacing: 164px;
+}
+
+.table {
+  width: 90vw;
+  max-width: 600px;
+  border-collapse: separate;
+}
+
+.table_header {
+  height: 25px;
+  border: 1px solid #000000;
+  background-color: #c4c7ff;
+  line-height: 2;
+  position: relative;
+}
+
+.table_data {
+  padding: 0 20px;
+  height: 30px;
+  background-color: #f3f9f9;
+  line-height: 2;
+  border: 1px solid #000000;
+}
+
+.table_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+}
+
+.td_phone {
+  display: none;
+  font-size: 0.8rem;
+  color: #535353;
+}
+
+.table_data:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: all 0.1s ease-in;
+}
+
+.table_data_default {
+  text-align: center;
+  height: 30px;
+  background-color: #f3f9f9;
+  line-height: 2;
+  border: 1px solid black;
+}
+
+.add_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 1.9rem;
+  position: absolute;
+  bottom: 14px;
+  right: -15px;
+}
+
+.add_btn:hover {
+  background-color: #25913e;
+}
+
+@media screen and (min-width: 600px) {
+  .add_btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 8px;
+    right: -25px;
+  }
+
+  .td_phone {
+    display: inline;
+  }
+}

@@ -1,0 +1,100 @@
+.access_background {
+  background-color: #e8ecf0;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.access_wrapper {
+  background-color: #ffffff;
+  height: 400px;
+  padding: 40px 20px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+.access_title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+.access_form {
+  margin-top: 20px;
+}
+
+.access_inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 190px;
+  width: 280px;
+}
+
+.access_user {
+  border: none;
+  border-bottom: 1px solid #969696;
+  width: 280px;
+}
+
+.access_user:focus {
+  outline: none;
+  border-bottom: 2px solid #000000;
+}
+
+.password_group {
+  display: flex;
+}
+
+.access_password {
+  border: none;
+  border-bottom: 1px solid #969696;
+  width: 280px;
+}
+
+.access_password:focus {
+  outline: none;
+  border-bottom: 2px solid #000000;
+}
+
+.isHidden {
+  display: none;
+  cursor: pointer;
+}
+
+.isNotHidden {
+  display: inline;
+  cursor: pointer;
+}
+
+.access_link {
+  display: block;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 100px;
+}
+
+.access_btn {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 109px;
+  background-color: #0d6efd;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.access_btn:hover {
+  background-color: #1561b3;
+}
+
+.fail_login {
+  color: #dc3545;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 140px;
+}
