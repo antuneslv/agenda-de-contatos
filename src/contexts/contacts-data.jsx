@@ -1,11 +1,11 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 import useFetch from '../hooks/useFetch'
 
-export const ContactsDataContext = createContext()
+const ContactsDataContext = createContext()
 
 function ContactsDataProvider({ children }) {
   const [contacts, setContacts] = useState([])
-  const { loading, request } = useFetch()
+  const { request } = useFetch()
 
   const getContacts = async () => {
     const resp = await request('contact')
@@ -14,7 +14,7 @@ function ContactsDataProvider({ children }) {
 
   useEffect(() => {
     getContacts()
-  }, [localStorage.getItem('token')])
+  }, [])
 
   return (
     <ContactsDataContext.Provider value={{ contacts }}>
@@ -24,3 +24,5 @@ function ContactsDataProvider({ children }) {
 }
 
 export default ContactsDataProvider
+
+export const useContacts = () => useContext(ContactsDataContext)

@@ -3,16 +3,26 @@ import { useState, useEffect } from 'react'
 import Button from '../../button'
 import Header from '../../header'
 import useFetch from '../../../hooks/useFetch'
+import editImg from '../../images/edit-img.png'
+import deletImg from '../../images/delet-img.png'
 import style from './style.module.css'
 
 function DetailsContact() {
   const params = useParams()
-  const { loading, request } = useFetch()
+  const { request } = useFetch()
   const [contact, setContact] = useState()
 
   const contactDetails = async () => {
     const resp = await request(`contact/${params.id}`)
     setContact(resp.json.data || [])
+  }
+
+  const deletContact = async () => {
+    const options = {
+      method: 'DELETE',
+      body: JSON.stringify({idContato: params.id})
+    }
+    await request('contact', options)
   }
 
   useEffect(() => {
@@ -130,9 +140,24 @@ function DetailsContact() {
             )}
           </p>
         </div>
-        <Link to={`/contato/editar/${params.id}`}>
-          <Button>Editar</Button>
-        </Link>
+        <div className={style.del_edit_btns}>
+          <Link to={`/contato/editar/${params.id}`}>
+            <Button className={style.edit_btn}>
+              <img
+                className={style.img_btns}
+                src={editImg}
+                alt="Botão editar"
+              />
+            </Button>
+          </Link>
+          <Button className={style.delet_btn} onClick={deletContact}>
+            <img
+              className={style.img_btns}
+              src={deletImg}
+              alt="Botão excluir"
+            />
+          </Button>
+        </div>
       </main>
     </>
   )

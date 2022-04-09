@@ -72,18 +72,6 @@
   gap: 20px;
 }
 
-.cancel_btn {
-  width: 80px;
-  height: 40px;
-  background-color: #dc3545;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.cancel_btn:hover {
-  background-color: #bb2c3a;
-}
-
 .save_btn {
   background-color: #28a745;
   color: #ffffff;

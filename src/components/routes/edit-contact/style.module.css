@@ -1,0 +1,11 @@
+.back_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #dc3545;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.back_btn:hover {
+  background-color: #bb2c3a;
+}

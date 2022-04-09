@@ -42,3 +42,33 @@
   color: #808080;
   font-style: italic;
 }
+
+.del_edit_btns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+
+.edit_btn {
+  background-color: #0d6efd;
+  padding: 8px 16px;
+}
+
+.edit_btn:hover {
+  background-color: #2b2fa8;
+}
+
+.delet_btn {
+  background-color: #dc3545;
+  padding: 8px 16px;
+}
+
+.delet_btn:hover {
+  background-color: #bb2c3a;
+}
+
+.img_btns {
+  width: 32px;
+  height: 30px;
+}

@@ -1,16 +1,18 @@
-import { useContext} from 'react'
+import { useContacts } from '../../../contexts/contacts-data'
 import { Link } from 'react-router-dom'
 import Button from '../../button'
 import Header from '../../header'
 import Input from '../../input'
-import { ContactsDataContext } from '../../../contexts/contacts-data'
 import style from './style.module.css'
 
 function Contacts() {
-  const context = useContext(ContactsDataContext)
+  const contactsContext = useContacts()
+
+ const { contacts } = contactsContext
+
 
   function logOut() {
-    localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
   }
 
   return (
@@ -43,8 +45,8 @@ function Contacts() {
             </tr>
           </thead>
           <tbody className={style.table_body}>
-            {context.contacts.length > 0 ? (
-              context.contacts.map(contact => (
+            {contacts.length > 0 ? (
+              contacts.map(contact => (
                 <tr key={contact.id}>
                   <td className={style.table_data}>
                     <Link to={`/contato/${contact.id}`}>

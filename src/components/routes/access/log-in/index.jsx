@@ -3,7 +3,6 @@ import Input from '../../../input'
 import Button from '../../../button'
 import { useEffect, useState } from 'react'
 import useFetch from '../../../../hooks/useFetch'
-// import { AuthorizationContext } from '../../../../contexts/authorization'
 import style from '../style.module.css'
 
 function LogIn() {
@@ -12,11 +11,9 @@ function LogIn() {
   const [failLogin, setFailLogin] = useState(false)
   const [authorization, setAuthorization] = useState(false)
 
-  const { loading, request } = useFetch()
+  const { request } = useFetch()
 
-  // const context = useContext(AuthorizationContext)
-
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleLogin = async e => {
     const options = {
@@ -37,7 +34,7 @@ function LogIn() {
   }
 
   useEffect(() => {
-    localStorage.getItem('token') && navigate('/contatos')
+    sessionStorage.getItem('token') && navigate('/contatos')
   }, [authorization])
 
   return (

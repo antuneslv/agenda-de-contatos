@@ -13,7 +13,7 @@ function SignUp() {
 
   const inputPasswordRef = useRef(null)
 
-  function showPassword(e) {
+  function showPassword() {
     inputPasswordRef.current.type === 'password'
       ? (inputPasswordRef.current.type = 'text')
       : (inputPasswordRef.current.type = 'password')
@@ -21,7 +21,7 @@ function SignUp() {
     passwordIcon === true ? setPasswordIcon(false) : setPasswordIcon(true)
   }
 
-  const { loading, request } = useFetch()
+  const { request } = useFetch()
 
   const handleSignUp = async () => {
     const options = {
@@ -33,7 +33,7 @@ function SignUp() {
       })
     }
 
-    const resp = await request('user', options)
+    await request('user', options)
   }
 
   return (

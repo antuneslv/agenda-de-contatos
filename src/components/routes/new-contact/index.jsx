@@ -20,7 +20,7 @@ function NewContact() {
   const [country, setCountry] = useState('')
   const [notes, setNote] = useState('')
 
-  const { loading, request } = useFetch()
+  const { request } = useFetch()
   let navigate = useNavigate()
 
   const handleNewContact = async e => {
@@ -57,7 +57,7 @@ function NewContact() {
       })
     }
 
-    const resp = await request('contact', options)
+    await request('contact', options)
 
     navigate('/contatos')
   }
