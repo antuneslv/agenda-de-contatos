@@ -7,6 +7,8 @@ import Contacts from './components/routes/contacts'
 import NewContact from './components/routes/new-contact'
 import DetailsContact from './components/routes/details-contact'
 import EditContact from './components/routes/edit-contact'
+import NotFoundPage from './components/routes/notFoundPage'
+import ProtectedRoutes from './components/routes/protectedRoutes'
 
 function Router() {
   return (
@@ -17,10 +19,13 @@ function Router() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Route>
-        <Route path="/contatos" element={<Contacts />} />
-        <Route path="/novo-contato" element={<NewContact />} />
-        <Route path="/contato/:id" element={<DetailsContact />} />
-        <Route path="/contato/editar/:id" element={<EditContact />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/contatos" element={<Contacts />} />
+          <Route path="/novo-contato" element={<NewContact />} />
+          <Route path="/contato/:id" element={<DetailsContact />} />
+          <Route path="/contato/editar/:id" element={<EditContact />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )

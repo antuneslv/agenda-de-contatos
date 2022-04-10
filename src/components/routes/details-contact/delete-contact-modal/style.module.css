@@ -1,27 +1,51 @@
-/* .modal{
+.modal {
+  border-radius: 20px;
+}
 
-} */
+.modal::backdrop {
+  background-color: #00000080;
+}
 
-/* .modal_title {
+.modal_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+}
 
-} */
+.modal_title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-/* .modal_text {
+.modal_name {
+  font-weight: 500;
+  font-style: italic;
+}
 
-} */
+.modal_btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 
 .modal_cancel_btn {
   background-color: #656565;
   color: #ffffff;
+  width: 80px;
+  height: 40px;
 }
 
 .modal_cancel_btn:hover {
-
+  background-color: #474747;
 }
 
 .modal_delete_btn {
   background-color: #dc3545;
   color: #ffffff;
+  width: 80px;
+  height: 40px;
 }
 
 .modal_delete_btn:hover {

@@ -13,9 +13,7 @@ function LogIn() {
   const [password, setPassword] = useState('')
   const [failLogin, setFailLogin] = useState(false)
   const [authorization, setAuthorization] = useState(false)
-
   const { request } = useFetch()
-
   const navigate = useNavigate()
 
   const handleLogin = async e => {
@@ -39,6 +37,7 @@ function LogIn() {
 
   useEffect(() => {
     sessionStorage.getItem('token') && navigate('/contatos')
+    getContacts()
   }, [authorization])
 
   return (

@@ -165,7 +165,7 @@ function DetailsContact() {
           </Button>
         </div>
       </main>
-      <DeletContactModal
+      <DeleteContactModal
         ref={modalRef}
         contactName={contact?.nome}
         handleDelete={handleDeleteContact}

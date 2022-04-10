@@ -16,8 +16,10 @@ function ContactsDataProvider({ children }) {
     getContacts()
   }, [])
 
+  const provisions = { contacts, getContacts }
+
   return (
-    <ContactsDataContext.Provider value={{ contacts, getContacts }}>
+    <ContactsDataContext.Provider value={provisions}>
       {children}
     </ContactsDataContext.Provider>
   )
