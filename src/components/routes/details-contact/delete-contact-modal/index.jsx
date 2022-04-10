@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Button from '../../../button'
 import style from './style.module.css'
 
-const DeletContactModal = forwardRef(({ contactName, handleDelete }, ref) => {
+const DeleteContactModal = forwardRef(({ contactName, handleDelete }, ref) => {
 
   return (
     <dialog ref={ref} className={style.modal}>
@@ -28,4 +28,4 @@ const DeletContactModal = forwardRef(({ contactName, handleDelete }, ref) => {
   )
 })
 
-export default DeletContactModal
+export default DeleteContactModal
