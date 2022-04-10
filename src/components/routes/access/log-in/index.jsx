@@ -1,3 +1,4 @@
+import { useContacts } from '../../../../contexts/contacts-data'
 import { Link, useNavigate } from 'react-router-dom'
 import Input from '../../../input'
 import Button from '../../../button'
@@ -6,6 +7,8 @@ import useFetch from '../../../../hooks/useFetch'
 import style from '../style.module.css'
 
 function LogIn() {
+  const contactsContext = useContacts()
+  const { getContacts } = contactsContext
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
   const [failLogin, setFailLogin] = useState(false)
@@ -30,6 +33,7 @@ function LogIn() {
     if (resp.json.status === 200) {
       setFailLogin(false)
       setAuthorization(true)
+      getContacts()
     }
   }
 

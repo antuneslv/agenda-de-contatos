@@ -59,12 +59,12 @@
   background-color: #2b2fa8;
 }
 
-.delet_btn {
+.delete_btn {
   background-color: #dc3545;
   padding: 8px 16px;
 }
 
-.delet_btn:hover {
+.delete_btn:hover {
   background-color: #bb2c3a;
 }
 

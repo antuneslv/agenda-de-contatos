@@ -17,7 +17,7 @@ function ContactsDataProvider({ children }) {
   }, [])
 
   return (
-    <ContactsDataContext.Provider value={{ contacts }}>
+    <ContactsDataContext.Provider value={{ contacts, getContacts }}>
       {children}
     </ContactsDataContext.Provider>
   )

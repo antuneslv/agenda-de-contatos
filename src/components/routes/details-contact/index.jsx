@@ -1,13 +1,18 @@
+import { useContacts } from '../../../contexts/contacts-data'
 import { Link, useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Button from '../../button'
 import Header from '../../header'
+import DeletContactModal from './delet-contact-modal'
 import useFetch from '../../../hooks/useFetch'
 import editImg from '../../images/edit-img.png'
-import deletImg from '../../images/delet-img.png'
+import deleteImg from '../../images/delete-img.png'
 import style from './style.module.css'
 
 function DetailsContact() {
+  const contactsContext = useContacts()
+  const { getContacts } = contactsContext
+  const modalRef = useRef(null)
   const params = useParams()
   const { request } = useFetch()
   const [contact, setContact] = useState()
@@ -17,12 +22,13 @@ function DetailsContact() {
     setContact(resp.json.data || [])
   }
 
-  const deletContact = async () => {
+  const handleDeleteContact = async () => {
     const options = {
       method: 'DELETE',
-      body: JSON.stringify({idContato: params.id})
+      body: JSON.stringify({ idContato: params.id })
     }
     await request('contact', options)
+    getContacts()
   }
 
   useEffect(() => {
@@ -150,15 +156,20 @@ function DetailsContact() {
               />
             </Button>
           </Link>
-          <Button className={style.delet_btn} onClick={deletContact}>
+          <Button onClick={() => {modalRef.current.showModal()}} className={style.delete_btn}>
             <img
               className={style.img_btns}
-              src={deletImg}
+              src={deleteImg}
               alt="Botão excluir"
             />
           </Button>
         </div>
       </main>
+      <DeletContactModal
+        ref={modalRef}
+        contactName={contact?.nome}
+        handleDelete={handleDeleteContact}
+      />
     </>
   )
 }

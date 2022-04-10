@@ -1,0 +1,29 @@
+/* .modal{
+
+} */
+
+/* .modal_title {
+
+} */
+
+/* .modal_text {
+
+} */
+
+.modal_cancel_btn {
+  background-color: #656565;
+  color: #ffffff;
+}
+
+.modal_cancel_btn:hover {
+
+}
+
+.modal_delete_btn {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.modal_delete_btn:hover {
+  background-color: #bb2c3a;
+}

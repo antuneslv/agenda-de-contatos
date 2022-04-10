@@ -1,3 +1,4 @@
+import { useContacts } from '../../../contexts/contacts-data'
 import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../header'
 import Button from '../../button'
@@ -7,6 +8,8 @@ import useFetch from '../../../hooks/useFetch'
 import style from './style.module.css'
 
 function NewContact() {
+  const contactsContext = useContacts()
+  const { getContacts } = contactsContext
   const [name, setName] = useState('')
   const [nickname, setNickname] = useState('')
   const [celPhone, setCelPhone] = useState('')
@@ -59,6 +62,7 @@ function NewContact() {
 
     await request('contact', options)
 
+    getContacts()
     navigate('/contatos')
   }
 

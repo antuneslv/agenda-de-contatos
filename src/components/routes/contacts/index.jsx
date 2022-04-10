@@ -4,12 +4,24 @@ import Button from '../../button'
 import Header from '../../header'
 import Input from '../../input'
 import style from './style.module.css'
+import { useEffect, useState } from 'react'
 
 function Contacts() {
   const contactsContext = useContacts()
+  const { contacts } = contactsContext
+  const [filteredName, setFilteredName] = useState([])
 
- const { contacts } = contactsContext
+  useEffect(() => {
+    setFilteredName(contacts)
+  }, [contacts])
 
+  function handleSearch(e) {
+    const searchWord = e.target.value
+    const filter = contacts.filter(contact => {
+      return contact.nome.toLowerCase().includes(searchWord.toLowerCase())
+    })
+    setFilteredName(filter)
+  }
 
   function logOut() {
     sessionStorage.removeItem('token')
@@ -31,6 +43,7 @@ function Contacts() {
           <Input
             className={style.search_input}
             placeholder="Pesquisar... &#128269;"
+            onChange={handleSearch}
           ></Input>
         </div>
         <table className={style.table}>
@@ -46,7 +59,7 @@ function Contacts() {
           </thead>
           <tbody className={style.table_body}>
             {contacts.length > 0 ? (
-              contacts.map(contact => (
+              filteredName.map(contact => (
                 <tr key={contact.id}>
                   <td className={style.table_data}>
                     <Link to={`/contato/${contact.id}`}>
