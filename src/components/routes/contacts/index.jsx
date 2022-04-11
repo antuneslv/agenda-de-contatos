@@ -1,15 +1,24 @@
-import { useContacts } from '../../../contexts/contacts-data'
 import { Link } from 'react-router-dom'
 import Button from '../../button'
 import Header from '../../header'
 import Input from '../../input'
 import style from './style.module.css'
 import { useEffect, useState } from 'react'
+import useFetch from '../../../hooks/useFetch'
 
 function Contacts() {
-  const contactsContext = useContacts()
-  const { contacts } = contactsContext
+  const [contacts, setContacts] = useState([])
+  const { request } = useFetch()
   const [filteredName, setFilteredName] = useState([])
+
+  const getContacts = async () => {
+    const resp = await request('contact')
+    setContacts(resp.json.data || [])
+  }
+
+  useEffect(() => {
+    getContacts()
+  }, [])
 
   useEffect(() => {
     setFilteredName(contacts)

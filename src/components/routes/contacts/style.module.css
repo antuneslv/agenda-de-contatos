@@ -1,8 +1,8 @@
 .btn_wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
 .logout_btn {
   width: 80px;

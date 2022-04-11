@@ -17,7 +17,7 @@
 
 .access_title {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #0d6efd;
   margin-bottom: 20px;
 }
@@ -38,6 +38,7 @@
   border: none;
   border-bottom: 1px solid #969696;
   width: 280px;
+  font-size: 1.1rem;
 }
 
 .access_user:focus {
@@ -53,6 +54,7 @@
   border: none;
   border-bottom: 1px solid #969696;
   width: 280px;
+  font-size: 1.1rem;
 }
 
 .access_password:focus {

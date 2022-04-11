@@ -22,9 +22,13 @@ function App() {
 
       <main className={style.main}>
         <div className={style.calls_wrapper}>
-          <p className={style.calls}>Adicione pessoas.</p>
-          <p className={style.calls}>Organize-se.</p>
-          <p className={style.calls}>Facilite a sua vida.</p>
+          <p className={style.calls + ' ' + style.animationOne}>
+            Adicione pessoas.
+          </p>
+          <p className={style.calls + ' ' + style.animationTwo}>Organize-se.</p>
+          <p className={style.calls + ' ' + style.animationThree}>
+            Facilite a sua vida.
+          </p>
           <p className={style.info}>
             <strong>My Contacts Book</strong> é uma agenda que te ajuda a
             gerenciar de maneira fácil e ágil seus contatos!
@@ -34,7 +38,11 @@ function App() {
           </Link>
         </div>
         <figure className={style.figure}>
-          <img className={style.img} src={sampleImg} alt="My Contacts Book Sample" />
+          <img
+            className={style.img}
+            src={sampleImg}
+            alt="My Contacts Book Sample"
+          />
         </figure>
       </main>
     </div>

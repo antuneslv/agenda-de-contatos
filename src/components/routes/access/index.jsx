@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import style from './style.module.css'
 
-function Access () {
+function Access() {
   return (
     <div className={style.access_background}>
       <div className={style.access_wrapper}>

@@ -6,7 +6,7 @@
   align-items: center;
   background-color: #e8ecf0;
   border-bottom: 1px solid #dadce0;
-  box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 1px 5px 0 #00000033;
 }
 
 .title {
