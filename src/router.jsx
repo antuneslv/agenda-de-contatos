@@ -7,8 +7,8 @@ import Contacts from './components/routes/contacts'
 import NewContact from './components/routes/new-contact'
 import DetailsContact from './components/routes/details-contact'
 import EditContact from './components/routes/edit-contact'
-import NotFoundPage from './components/routes/notFoundPage'
-import ProtectedRoutes from './components/routes/protectedRoutes'
+import NotFoundPage from './components/routes/not-found-page'
+import ProtectedRoutes from './components/routes/protected-routes'
 
 function Router() {
   return (

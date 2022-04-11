@@ -4,6 +4,7 @@ import Input from '../../../input'
 import Button from '../../../button'
 import { useEffect, useState } from 'react'
 import useFetch from '../../../../hooks/useFetch'
+import useStorage from '../../../../hooks/useStorage'
 import style from '../style.module.css'
 
 function LogIn() {
@@ -12,7 +13,7 @@ function LogIn() {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
   const [failLogin, setFailLogin] = useState(false)
-  const [authorization, setAuthorization] = useState(false)
+  const [authenticated, setAuthenticated] = useStorage('authenticated', false)
   const { request } = useFetch()
   const navigate = useNavigate()
 
@@ -30,15 +31,15 @@ function LogIn() {
 
     if (resp.json.status === 200) {
       setFailLogin(false)
-      setAuthorization(true)
+      setAuthenticated(true)
       getContacts()
     }
   }
 
   useEffect(() => {
-    sessionStorage.getItem('token') && navigate('/contatos')
     getContacts()
-  }, [authorization])
+    sessionStorage.getItem('token') && navigate('/contatos')
+  }, [authenticated])
 
   return (
     <form className={style.access_form}>

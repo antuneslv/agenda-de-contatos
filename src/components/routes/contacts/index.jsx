@@ -25,6 +25,7 @@ function Contacts() {
 
   function logOut() {
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('authenticated')
   }
 
   return (

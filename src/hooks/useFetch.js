@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import useStorage from './useStorage'
 
 const useFetch = url => {

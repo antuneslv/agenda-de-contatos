@@ -1,3 +1,4 @@
+import { useContacts } from '../../../contexts/contacts-data'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Button from '../../button'
@@ -7,6 +8,8 @@ import useFetch from '../../../hooks/useFetch'
 import style from './style.module.css'
 
 function EditContact() {
+  const contactsContext = useContacts()
+  const { getContacts } = contactsContext
   const params = useParams()
   const [contact, setContact] = useState(null)
   const { request } = useFetch()
@@ -85,6 +88,8 @@ function EditContact() {
     }
 
     await request('contact', options)
+
+    getContacts()
 
     navigate(`/contato/${params.id}`)
   }
