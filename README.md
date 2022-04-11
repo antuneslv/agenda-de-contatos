@@ -3,7 +3,6 @@
 ## Projeto final do Módulo React 2 do curso de Web Full Stack da Let's Code
 
 Este projeto consiste em criar uma agenda de contatos usando a biblioteca React.js.
-Mais detalhes das regras do projeto logo abaixo.
 
 ## Instalação
 
